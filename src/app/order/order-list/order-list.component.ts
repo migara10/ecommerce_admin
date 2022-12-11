@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiServiseService } from 'src/app/service/api-service.service';
+import { NgxSpinnerService } from "ngx-spinner";
 import * as moment from 'moment';
 
 @Component({
@@ -9,24 +10,20 @@ import * as moment from 'moment';
 })
 export class OrderListComponent implements OnInit {
   panelOpenState = false;
-  orderRecords : any;
+  orderRecords: any;
   step = 0;
   baseUri = this.api.API_URL;
   data: any;
-  users:any;
+  users: any;
   p: number = 1;
   total: number = 0;
   limit: number = 2;
-  constructor(private api: ApiServiseService) {
+  constructor(private api: ApiServiseService, private spinner: NgxSpinnerService) {
     this.getUsers();
-   }
+  }
 
   ngOnInit(): void {
-
-    
-    
-    
-    
+    this.spinner.show();
   }
 
   convertTime(time: any) {
@@ -34,17 +31,19 @@ export class OrderListComponent implements OnInit {
     return newTime;
   }
 
-  getUsers(){
-      this.api.getresponse("get", `order?page=${this.p}&limit=${this.limit}`, {})
+  getUsers() {
+    this.spinner.show();
+    this.api.getresponse("get", `order?page=${this.p}&limit=${this.limit}`, {})
       .subscribe(res => {
         this.orderRecords = res.data[0].docs;
         this.total = res.data[0].totalDocs;
+        this.spinner.hide();
       },
-        err => console.log(err)
+        err => { { this.spinner.hide(); } }
       )
-} 
-  pageChangeEvent(event: number){
+  }
+  pageChangeEvent(event: number) {
     this.p = event;
     this.getUsers();
-}
+  }
 }
