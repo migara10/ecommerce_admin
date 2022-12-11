@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login/login.component';
+import { OrderListComponent } from './order/order-list/order-list.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,12 @@ const routes: Routes = [
       { path: 'specs', component: Specs }
     ]
   } */
+  {
+    path: 'view_order',
+    pathMatch: 'full',
+    data: { isShow: false },
+    component: OrderListComponent,
+  },
 ];
 
 @NgModule({
