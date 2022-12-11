@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login/login.component';
 import { OrderListComponent } from './order/order-list/order-list.component';
+import { AddProductComponent } from './order/add-product/add-product.component';
+import { AddItemsComponent } from './order/add-items/add-items.component';
 
 const routes: Routes = [
   {
@@ -22,6 +24,18 @@ const routes: Routes = [
     pathMatch: 'full',
     data: { isShow: false },
     component: OrderListComponent,
+  },
+  {
+    path: 'add_product',
+    pathMatch: 'full',
+    data: { isShow: false },
+    component: AddProductComponent,
+  },
+  {
+    path: 'add_items',
+    pathMatch: 'full',
+    data: { isShow: false },
+    component: AddItemsComponent,
   },
 ];
 

@@ -15,12 +15,16 @@ import { MatCardModule } from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
 import { ApiServiseService } from './service/api-service.service';
 import { OrderListComponent } from './order/order-list/order-list.component';
+import { AddProductComponent } from './order/add-product/add-product.component';
+import { AddItemsComponent } from './order/add-items/add-items.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     OrderListComponent,
+    AddProductComponent,
+    AddItemsComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,6 +39,7 @@ import { OrderListComponent } from './order/order-list/order-list.component';
     ToastrModule,
     MatCardModule,
     HttpClientModule,
+    ToastrModule.forRoot(), // ToastrModule added
   ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
