@@ -17,10 +17,12 @@ import { ApiServiseService } from './service/api-service.service';
 import { OrderListComponent } from './order/order-list/order-list.component';
 import { AddProductComponent } from './order/add-product/add-product.component';
 import { AddItemsComponent } from './order/add-items/add-items.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    HomeComponent,
     LoginComponent,
     OrderListComponent,
     AddProductComponent,
