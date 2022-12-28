@@ -4,12 +4,19 @@ import { LoginComponent } from './login/login/login.component';
 import { OrderListComponent } from './order/order-list/order-list.component';
 import { AddProductComponent } from './order/add-product/add-product.component';
 import { AddItemsComponent } from './order/add-items/add-items.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
     component: LoginComponent,
+    data: { isShow: false },
+  },
+  {
+    path: 'home',
+    pathMatch: 'full',
+    component: HomeComponent,
     data: { isShow: true },
   },
   /* { path: 'product-details/:id', component: ProductDetails,
@@ -22,19 +29,19 @@ const routes: Routes = [
   {
     path: 'view_order',
     pathMatch: 'full',
-    data: { isShow: false },
+    data: { isShow: true },
     component: OrderListComponent,
   },
   {
     path: 'add_product',
     pathMatch: 'full',
-    data: { isShow: false },
+    data: { isShow: true },
     component: AddProductComponent,
   },
   {
     path: 'add_items',
     pathMatch: 'full',
-    data: { isShow: false },
+    data: { isShow: true },
     component: AddItemsComponent,
   },
 ];
