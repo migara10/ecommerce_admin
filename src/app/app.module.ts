@@ -18,6 +18,8 @@ import { OrderListComponent } from './order/order-list/order-list.component';
 import { AddProductComponent } from './order/add-product/add-product.component';
 import { AddItemsComponent } from './order/add-items/add-items.component';
 import { HomeComponent } from './home/home.component';
+import { EditProductComponent } from './product/edit-product/edit-product.component';
+import { EditProductPopupComponent } from './product/edit-product-popup/edit-product-popup.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,8 @@ import { HomeComponent } from './home/home.component';
     OrderListComponent,
     AddProductComponent,
     AddItemsComponent,
+    EditProductComponent,
+    EditProductPopupComponent
   ],
   imports: [
     BrowserModule,

@@ -5,6 +5,8 @@ import { OrderListComponent } from './order/order-list/order-list.component';
 import { AddProductComponent } from './order/add-product/add-product.component';
 import { AddItemsComponent } from './order/add-items/add-items.component';
 import { HomeComponent } from './home/home.component';
+import { EditProductComponent } from './product/edit-product/edit-product.component';
+import { EditProductPopupComponent } from './product/edit-product-popup/edit-product-popup.component';
 
 const routes: Routes = [
   {
@@ -43,6 +45,18 @@ const routes: Routes = [
     pathMatch: 'full',
     data: { isShow: true },
     component: AddItemsComponent,
+  },
+  {
+    path: 'edit_product',
+    pathMatch: 'full',
+    data: { isShow: false },
+    component: EditProductComponent,
+  },
+  {
+    path: 'edit_product',
+    pathMatch: 'full',
+    data: { isShow: false },
+    component: EditProductPopupComponent,
   },
 ];
 
